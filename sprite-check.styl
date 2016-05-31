@@ -1,0 +1,40 @@
+.sprite-check{
+    content: "";
+    display:inline-block;
+    background-image: url(sprite-checkbox.png);
+    background-repeat: no-repeat;
+}
+.sprite-check-off{
+    @extends .sprite-check;
+    background-position-y:-18px;
+    background-position-x:0;
+}
+.sprite-check-on{
+    @extends .sprite-check;
+    background-position-y:0;
+    background-position-x:-18px;
+}
+.bg_checkbox li {
+    position: relative;
+    display: inline-block;
+    margin: 0 32px 0 0;
+    padding: 0;
+}
+ 
+.bg_checkbox input {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin:0;
+}
+.bg_checkbox input[type="checkbox"] + label {
+    display: block;
+    @extends .sprite-check-off;
+    padding: 0 0 0 24px;
+}
+ 
+.bg_checkbox input[type="checkbox"]:checked + label {
+    @extends .sprite-check-on;
+}
